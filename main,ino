@@ -39,7 +39,7 @@ void setup() {
   pinMode (ST_press, INPUT_PULLUP);    //11                // input for START keypress
   pinMode (L1_press, INPUT_PULLUP);    //10                    // input for L1 keypress
   pinMode (R1_press, INPUT_PULLUP);    //9                        // input for R1 keypress
-  pinMode (SEL_press, INPUT_PULLUP);    //8                            // input for SELECT keypress
+  pinMode (SEL_press, INPUT_PULLUP);   //8                            // input for SELECT keypress
 
   pinMode (PAL_pin, OUTPUT);           //7          // OUTPUT for PAL VCC
   pinMode (NTSC_pin, OUTPUT);          //6          //OUTPUT for NTSC VCC
