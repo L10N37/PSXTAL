@@ -55,7 +55,7 @@ void PAL() {
   delay (7000);                                       //
 
   if (pin_register == keypress) {     // monitor port B registry
-    NTSC();
+    NTSC();                           // switch to NTSC mode if L1+R1+START+SELECT press detected for 7 seconds straight
   }
   else {
     MODE_LATCH = PAL_MODE;            // set PAL mode after register B monitoring (no videomode change keypress detected)
@@ -69,7 +69,7 @@ void NTSC() {
   digitalWrite (NEW_MODE, !digitalRead (MODE_LATCH)); // After hard press detected on B registry, softwrite new value to register with 7s delay (smooth transitions)
   delay (7000);                                       //
   if (pin_register == keypress) {     // monitor port B registry
-    PAL();                            // switch to PAL mode if L1+R1+START+SELECT press detected for 3.5 seconds straight
+    PAL();                            // switch to PAL mode if L1+R1+START+SELECT press detected for 7 seconds straight
   }
   else {
     MODE_LATCH = NTSC_MODE;           // set NTSC mode after register B monitoring (no videomode change keypress detected)
