@@ -51,7 +51,7 @@ void setup() {
 
 void PAL() {
   MODE_LATCH = PAL_MODE;              // SET PAL mode before register B monitoring
-  digitalWrite (NEW_MODE, !digitalRead (MODE_LATCH)); // After hard press detected on B registry, softwrite new value to register with 3.5s delay (smooth transitions)
+  digitalWrite (NEW_MODE, !digitalRead (MODE_LATCH)); // After hard press detected on B registry, softwrite new value to register with 7s delay (smooth transitions)
   delay (7000);                                       //
 
   if (pin_register == keypress) {     // monitor port B registry
@@ -66,7 +66,7 @@ void PAL() {
 
 void NTSC() {
   MODE_LATCH = NTSC_MODE;             // set NTSC mode before register B monitoring
-  digitalWrite (NEW_MODE, !digitalRead (MODE_LATCH)); // After hard press detected on B registry, softwrite new value to register with 3.5s delay (smooth transitions)
+  digitalWrite (NEW_MODE, !digitalRead (MODE_LATCH)); // After hard press detected on B registry, softwrite new value to register with 7s delay (smooth transitions)
   delay (7000);                                       //
   if (pin_register == keypress) {     // monitor port B registry
     PAL();                            // switch to PAL mode if L1+R1+START+SELECT press detected for 3.5 seconds straight
