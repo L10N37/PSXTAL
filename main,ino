@@ -4,7 +4,7 @@
 
 
 /*Default boot mode is PAL, boot into NTSC  straight up with L1, R2, START or select held (or any combination of)
-  switch between video modes with L1+R2+START+SELECT held simultaneously for 7 seconds /* */
+  switch between video modes with L1+R2+START+SELECT held simultaneously for 7 seconds /*
 
 const int NTSC_MODE     = (0B01000000);   //  ***   set D register to two modes for easier readability ***
 const int PAL_MODE      = (0B10000000);   //   ***   BIT 7 OR BIT 8 high dependant on mode              ***
