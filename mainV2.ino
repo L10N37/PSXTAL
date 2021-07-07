@@ -14,9 +14,6 @@
 
 const int NTSC_MODE     = (0B01000000);   //  ***   set D register to two modes for easier readability ***
 const int PAL_MODE      = (0B10000000);   //   ***   BIT 7 OR BIT 8 high dependant on mode              ***
-
-const int keypress_PAL   = (0B000001);    // set value of register (B) for simultaneous keypress for PAL mode  (L1 + R1 + START)    //no longer used
-const int keypress_NTSC  = (0B001000);    // set value of register (B) for simultaenous keypress for NTSC mode   (L1 + R1 + SELECT) //no longer used
 const int keypress_none  = (0B001111);    // set value of register (B) for default (no keys pressed @ boot)
 const int keypress       = (0B000000);    // L1+R1+START+SELECT
 
