@@ -1,10 +1,12 @@
 //                                          L10N37 / VAJSKIDS CONSOLES 50/60HZ PSXTAL SELECTOR , June 2021
 //                                                                                ...Techicially version 31,204
-// wasn't even thinking about this code and it just came to mind that there was an if, else if, else in the main.. realised it could just be swapped to if (ntsc) else (pal)
-// as oppose to if (no keypress / then PAL, else if  keypress / then NTSC / else PAL) but then I decided to do a restructure, it literally took 2 minutes and it's much better now
-// Now we hold the key combo for 2 seconds, then release and there's a smooth transition back and forth. Prior if you held the combo it would eventually switch even whilst still 
-// holding the key combo and I also couldn't work out why every now and then it would jump from NTSC to PAL sooner than the delay function should have permitted
-// (but never the other way around). Seems to be fixed
+// wasn't even thinking about this code and it just came to mind that there was an if, else if, else in the main.. realised it could just be swapped 
+// to if (ntsc) else (pal)
+// as oppose to if (no keypress / then PAL, else if  keypress / then NTSC / else PAL) but then I decided to do a restructure, it literally took 2 minutes 
+// and it's much better now
+// Now we hold the key combo for 2 seconds, then release and there's a smooth transition back and forth. Prior if you held the combo it would eventually switch 
+// even whilst still  holding the key combo and I also couldn't work out why every now and then it would jump from NTSC to PAL sooner than the delay function 
+// should have permitted (but never the other way around). Seems to be fixed.
 
 
 /*Default boot mode is PAL, boot into NTSC  straight up with L1, R2, START or select held (or any combination of) <--This was changed
