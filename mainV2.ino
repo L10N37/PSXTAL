@@ -1,4 +1,4 @@
-//                                          L10N37 / VAJSKIDS CONSOLES 50/60HZ PSXTAL SELECTOR , June 2021
+//                                          L10N37 / VAJSKIDS CONSOLES 50/60HZ PSXTAL SELECTOR , July 2021
 //                                                                                ...Techicially version 31,204
 // wasn't even thinking about this code and it just came to mind that there was an if, else if, else in the main.. realised it could just be swapped 
 // to if (ntsc) else (pal)
