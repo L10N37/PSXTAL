@@ -12,9 +12,8 @@
 /*Default boot mode is PAL, boot into NTSC  straight up with L1, R2, START or select held (or any combination of) <--This was changed
   switch between video modes with L1+R2+START+SELECT held simultaneously for 2 seconds THEN RELEASE, this needs to be *fairly* precise */
 
-const int NTSC_MODE     = (0B01000000);   //  ***   set D register to two modes for easier readability ***
-const int PAL_MODE      = (0B10000000);   //   ***   BIT 7 OR BIT 8 high dependant on mode              ***
-const int keypress_none  = (0B001111);    // set value of register (B) for default (no keys pressed @ boot)
+const int NTSC_MODE     = (0B01000100);   //  ***   set D register to two modes for easier readability *** ===added piggbacking status light bits for coloured
+const int PAL_MODE      = (0B10010000);   //   ***   BIT 7 OR BIT 8 high dependant on mode             *** LED's to show through transparent cut out
 const int keypress       = (0B000000);    // L1+R1+START+SELECT
 
 
@@ -43,6 +42,8 @@ void setup() {
   pinMode (L1_press, INPUT_PULLUP);    //10                    // input for L1 keypress
   pinMode (R1_press, INPUT_PULLUP);    //9                        // input for R1 keypress
   pinMode (SEL_press, INPUT_PULLUP);   //8                            // input for SELECT keypress
+  pinMode (4, OUTPUT);  // PAL MODE "on" status light
+  pinMode (2, OUTPUT);  // NTSC MODE "on" status light
 
   pinMode (PAL_pin, OUTPUT);           //7          // OUTPUT for PAL VCC
   pinMode (NTSC_pin, OUTPUT);          //6          //OUTPUT for NTSC VCC
