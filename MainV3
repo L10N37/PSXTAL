@@ -18,9 +18,9 @@
 /*Default boot mode is PAL, boot into NTSC  straight up with L1, R2, START or select held (or any combination of) <--This was changed
   switch between video modes with L1+R2+START+SELECT held simultaneously for 7 seconds */
 
-const int NTSC_MODE     = (0B01000100);   //  ***   set D register to two modes for easier readability ***
-const int PAL_MODE      = (0B10010000);   //   ***   BIT 7 OR BIT 8 high dependant on mode              ***
-const int keypress       = (0B000000);    // START+SELECT
+const int NTSC_MODE     = (0B01010000);   //  ***   set D register to two modes for easier readability ***        //PORTD maps to Arduino digital pins 0 to 7 
+const int PAL_MODE      = (0B10000100);   //   ***   BIT 7 OR BIT 8 high dependant on mode              ***
+const int keypress       = (0B000000);    // START+SELECT                                                         //PORTB maps to Arduino digital pins 8 to 13
 
 
 void setup() {
@@ -65,11 +65,11 @@ void PAL() {
 //========================== MONITOR FOR NTSC TO PAL SWITCH ========================
 
 void NTSC() {
-  LATCH = NTSC_MODE;
   if (pin_register == keypress) {     // monitor port B register for keypress, switch modes if detected
     delay (3000);
     PAL();
   }
+  LATCH = NTSC_MODE;                  // I don't know why, but this loop needs to latch here or it only latches for a few seconds
   NTSC();                             // if not detected, stay in ntsc mode
 }
 
@@ -79,7 +79,5 @@ void loop() {
   if (pin_register == keypress) {
     NTSC();   //jump to monitoring for keypress, stay in this mode unless keypress detected
   }
-  else {
-    PAL();    //jump to monitoring for keypress, stay in this mode unless keypress detected
-  }
+  PAL();    //jump to monitoring for keypress, stay in this mode unless keypress detected
 }
