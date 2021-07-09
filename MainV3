@@ -69,7 +69,7 @@ void NTSC() {
     delay (3000);
     PAL();
   }
-  LATCH = NTSC_MODE;                  // I don't know why, but this loop needs to latch here or it only latches for a few seconds
+  LATCH = NTSC_MODE;                  // This loop is read backwards so needs to latch here, not sure why
   NTSC();                             // if not detected, stay in ntsc mode
 }
 
