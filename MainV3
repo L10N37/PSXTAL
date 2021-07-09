@@ -53,7 +53,7 @@ void setup() {
 
 void PAL() {
   LATCH = PAL_MODE;
-  delay (3000);
+  delay (3000); // delay + debounce
   if (pin_register == keypress) {     // monitor port B register for keypress
   return; // Same as NTSC() in this position of the program, returns to main first instead of straight to NTSC(), use either
   }
