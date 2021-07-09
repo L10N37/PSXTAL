@@ -8,10 +8,12 @@
 // even whilst still  holding the key combo and I also couldn't work out why every now and then it would jump from NTSC to PAL sooner than the delay function
 // should have permitted (but never the other way around). Seems to be fixed.
 
-// V3. Tidied it up, shaved a couple percent off total size. Still no relevance to when it's finished but If i couldn't optimise this a little I don't think 
-// I stand a chance going further with the project
-// Gets difficult soon as PS2X isn't working.. next is serial monitor stuff involving a lot of PSX/PS2 specific controller interface tech stuff.. wish me luck
-// Changed to just START+SELECT, 3 seconds, no release required
+//V3. Tidied it up, shaved a couple percent off total size (actually back to 1% smaller). Still no relevance to when it's finished but If i couldn't optimise
+// this a little I don't think I stand a chance going further with the project as it gets difficult soon as PS2X isn't working.. next is serial monitor stuff 
+// involving a lot of PSX/PS2 specific controller interface tech stuff.. wish me luck
+
+//Now a single START+SELECT combo and a few second delay until a mode change
+
 
 /*Default boot mode is PAL, boot into NTSC  straight up with L1, R2, START or select held (or any combination of) <--This was changed
   switch between video modes with L1+R2+START+SELECT held simultaneously for 7 seconds */
@@ -53,8 +55,8 @@ void setup() {
 
 void PAL() {
   LATCH = PAL_MODE;
-  delay (3000); // delay + debounce
   if (pin_register == keypress) {     // monitor port B register for keypress
+  delay (3000); //debounce and delay (doesn't need to be 3 seconds, but needs a debounce for smooth transition
   return; // Same as NTSC() in this position of the program, returns to main first instead of straight to NTSC(), use either
   }
   PAL();                              // if not detected stay in PAL mode
@@ -64,8 +66,8 @@ void PAL() {
 
 void NTSC() {
   LATCH = NTSC_MODE;
-  delay (3000);
   if (pin_register == keypress) {     // monitor port B register for keypress, switch modes if detected
+    delay (3000);
     PAL();
   }
   NTSC();                             // if not detected, stay in ntsc mode
