@@ -54,11 +54,11 @@ void setup() {
 //========================== MONITOR FOR PAL TO NTSC SWITCH  =======================
 
 void PAL() {
-  LATCH = PAL_MODE;
   if (pin_register == keypress) {     // monitor port B register for keypress
     delay (3000); //debounce and delay (doesn't need to be 3 seconds, but needs a debounce for smooth transition
     return; // Same as NTSC() in this position of the program, returns to main first instead of straight to NTSC(), use either
   }
+  LATCH = PAL_MODE;                   //
   PAL();                              // if not detected stay in PAL mode
 }
 
@@ -69,7 +69,7 @@ void NTSC() {
     delay (3000);
     PAL();
   }
-  LATCH = NTSC_MODE;                  // This loop is read backwards so needs to latch here, not sure why
+  LATCH = NTSC_MODE;                  // 
   NTSC();                             // if not detected, stay in ntsc mode
 }
 
