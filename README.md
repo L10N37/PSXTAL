@@ -6,3 +6,9 @@ The XTALS should only consume power in the low nano amps so this should be ok.
 No idea how I'm going to implement it in the console, it will likely need heavy modification.
 
 VajskiDs
+
+
+Update:
+PSXTAL is pretty well finished, may need to add support for another controller, it might map differently.
+Also contains in game reset for short or long pulses (awesome for Xstation)
+ - VajskiDs
