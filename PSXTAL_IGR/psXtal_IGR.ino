@@ -79,7 +79,6 @@ void setup() {
   digitalWrite (PAL, 0);
   pinMode (reset, INPUT);
  // Serial.begin(74880);  // only for dev monitoring
-  SPI.begin();
 }
 
 
