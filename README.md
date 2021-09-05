@@ -5,7 +5,7 @@ The idea is to switch XTALS in a console to swap between NTSC/PAL video modes in
 The XTALS should only consume power in the low nano amps so this should be ok.
 No idea how I'm going to implement it in the console, it will likely need heavy modification.
 
-VajskiDs
+
 
 
 Update:
