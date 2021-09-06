@@ -9,7 +9,7 @@
 //===============================================================// CURRRENT BUTTON MAPS //===============================================================//
 // Video mode combos need to be held approximately 5  seconds MINIMUM - packet errors can extend this
 // Reset mode combos are VERY well guarded for accidental flags, may need to be held for 10 to 15 seconds!
-// you can lower the counters from 14 for a quicker acceptance of this combo.
+// you can lower the counters from 10 for a quicker acceptance of this combo.
 
 
 
@@ -146,13 +146,13 @@ void loop() {
   }
 
 
-  if (counter == 14 && buffer ==  0xDB || counter == 14 && buffer ==  0xF3) {         // short reset conditions
+  if (counter == 10 && buffer ==  0xDB || counter == 14 && buffer ==  0xF3) {         // short reset conditions
     shortrst();
   }
 
 
 
-  if (counter == 14 && buffer ==  0xEB || counter == 14 && buffer ==  0xDD) {         // long reset conditions
+  if (counter == 10 && buffer ==  0xEB || counter == 14 && buffer ==  0xDD) {         // long reset conditions
     longrst();
   }
 
