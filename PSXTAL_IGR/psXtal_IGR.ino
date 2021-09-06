@@ -103,7 +103,7 @@ void sw_video() {
     digitalWrite (PAL, 0);
     NTSC_ = 1;
     PAL_ = 0;
-    buffer == 0x00;
+    buffer = 0x00;
 
 
   }
