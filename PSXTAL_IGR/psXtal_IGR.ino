@@ -16,6 +16,7 @@
 // SCPH110 DUAL SHOCK CONTROLLER IN DIGITAL MODE *********************************************************************************************************
 // + SCPH1180 LARGE MADE IN JAPAN ANALOGUE CONTROLLER IN DIGITAL MODE
 // + SCPH10010 PS2 DUAL SHOCK 2 ANALOGUE CONTROLLER IN DIGITAL MODE
+// + SCPH1200 SCPH1200 REGULAR ANALOGUE CONTROLLER WITH RUMBLE
 
 
 // L1+R1+CIRCLE:  0xE5         Video Mode (PAL / NTSC)
@@ -32,23 +33,24 @@
 
 //===============================================================//====================== //===============================================================//
 
-//                                              ,----,                ,--,    
-//  ,-.----.                                  ,/   .`|             ,---.'|    
-//  \    /  \    .--.--.   ,--,     ,--,    ,`   .'  : ,---,       |   | :    
-//  |   :    \  /  /    '. |'. \   / .`|  ;    ;     /'  .' \      :   : |    
-//  |   |  .\ :|  :  /`. / ; \ `\ /' / ;.'___,/    ,'/  ;    '.    |   ' :    
-//  .   :  |: |;  |  |--`  `. \  /  / .'|    :     |:  :       \   ;   ; '    
-//  |   |   \ :|  :  ;_     \  \/  / ./ ;    |.';  ;:  |   /\   \  '   | |__  
-//  |   : .   / \  \    `.   \  \.'  /  `----'  |  ||  :  ' ;.   : |   | :.'| 
-//  ;   | |`-'   `----.   \   \  ;  ;       '   :  ;|  |  ;/  \   \'   :    ; 
-//  |   | ;      __ \  \  |  / \  \  \      |   |  ''  :  | \  \ ,'|   |  ./  
-//  :   ' |     /  /`--'  / ;  /\  \  \     '   :  ||  |  '  '--'  ;   : ;    
+
+//                                              ,----,                ,--,
+//  ,-.----.                                  ,/   .`|             ,---.'|
+//  \    /  \    .--.--.   ,--,     ,--,    ,`   .'  : ,---,       |   | :
+//  |   :    \  /  /    '. |'. \   / .`|  ;    ;     /'  .' \      :   : |
+//  |   |  .\ :|  :  /`. / ; \ `\ /' / ;.'___,/    ,'/  ;    '.    |   ' :
+//  .   :  |: |;  |  |--`  `. \  /  / .'|    :     |:  :       \   ;   ; '
+//  |   |   \ :|  :  ;_     \  \/  / ./ ;    |.';  ;:  |   /\   \  '   | |__
+//  |   : .   / \  \    `.   \  \.'  /  `----'  |  ||  :  ' ;.   : |   | :.'|
+//  ;   | |`-'   `----.   \   \  ;  ;       '   :  ;|  |  ;/  \   \'   :    ;
+//  |   | ;      __ \  \  |  / \  \  \      |   |  ''  :  | \  \ ,'|   |  ./
+//  :   ' |     /  /`--'  / ;  /\  \  \     '   :  ||  |  '  '--'  ;   : ;
 //  :   : :    '--'.     /./__;  \  ;  \    ;   |.' |  :  :        |   ,/     NTSC / PAL wireless mode change (dual XTAL selector)
 //  |   | :      `--'---' |   : / \  \  ;   '---'   |  | ,'        '---'      + wireless IN GAME RESET
-//  `---'.|               ;   |/   \  ' |           `--''                     
-//  `---`               `---'     `--`                                      
-                                                            // VajskiDs Consoles 2021                                                                         
-                                                            
+//  `---'.|               ;   |/   \  ' |           `--''
+//  `---`               `---'     `--`
+// VajskiDs Consoles 2021
+
 #include<SPI.h>
 #define NTSC 2
 #define PAL 3
@@ -78,7 +80,7 @@ void setup() {
   pinMode (PAL, OUTPUT);
   digitalWrite (PAL, 0);
   pinMode (reset, INPUT);
- // Serial.begin(74880);  // only for dev monitoring
+  Serial.begin(74880);  // only for dev monitoring
 }
 
 
@@ -86,12 +88,13 @@ ISR (SPI_STC_vect) {            // interrupt routine function
 
   if (SPDR == 0xD9 || SPDR == 0xE5 || SPDR == 0xF3 || SPDR == 0xDB || SPDR == 0xEB || SPDR == 0xDD )
 
-    buffer = SPDR;              // take a snap shot of the SPDR register and store it in 'buffer', but only if it's an error free combo capture byte
+  buffer = SPDR;              // take a snap shot of the SPDR register and store it in 'buffer', but only if it's an error free combo capture byte
 
   else {
 
-    buffer = 0x00;              // miscommunicated packet!clear the buffer and try again
+  buffer = 0x00;              // miscommunicated packet!clear the buffer and try again
   }
+
 }
 
 void sw_video() {
@@ -161,8 +164,9 @@ void loop() {
   SPCR = 0xCB;                                  // SPI setup, 250khz, MSB (as slave), clock idle high, read on rising edge, SPI / SPI interrupts on,
   //Serial.print("Combo Received from Controller: ");   // dev stuff
   //Serial.println(buffer, BIN);
-  digitalWrite (SPE, 0);                        // disable SPI
   delay (500);
+  digitalWrite (SPE, 0);                        // disable SPI
+  
 
 
   if (buffer == 0xE5 || buffer == 0xD9 || buffer ==  0xF3 || buffer ==  0xDB || buffer ==  0xEB || buffer ==  0xDD) { // ensure the combo has to be held for at least ~5s
