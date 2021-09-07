@@ -10,6 +10,8 @@ You'd only have to monitor through the serial port (just comment out everything 
 
 The board will store and remember the last video mode used, and re-initialise this mode on next boot after power off.
 
+You can use any other reset point from other IGR's, or wherever Pin 4 leads to on modchip installations is also a reset point.
+
 VajskiDs Consoles 2021
 
 
