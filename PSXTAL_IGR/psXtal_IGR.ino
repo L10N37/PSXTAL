@@ -192,8 +192,8 @@ void loop() {
 
 
   SPCR = 0xCB;                                                // SPI setup, 250khz, MSB (as slave), clock idle high, read on rising edge, SPI / SPI interrupts on,
-  Serial.print("Combo Received from Controller: ");           // dev stuff
-  Serial.println(buffer, BIN);
+  //Serial.print("Combo Received from Controller: ");           // dev stuff
+  //Serial.println(buffer, BIN);
   digitalWrite (SPE, 0);                                      // disable SPI
   delay (500);
 
