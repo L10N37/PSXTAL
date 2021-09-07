@@ -6,7 +6,7 @@ And for video mode switching it supports a small PCB i made that routes power to
 
 PSXTAL is pretty well finished, all the genuine controller types are supported anyway. I can't say whether aftermarket ones will work as there's too many, and I'll never bother getting them.
 
-You'd only have to monitor through the serial port (just comment out everything bar the snapshot in the interrupt so you see streaming '11111') then make sure for a 3 button combo, you've actually flipped 3 bits. Add this hex value to the according 'OR's' in the appropriate sections and you've added your controller support!
+You'd only have to monitor through the serial port (just comment out everything bar the snapshot in the interrupt so you see streaming '11111111') then make sure for a 3 button combo, you've actually flipped 3 bits. Add this hex value to the according 'OR's' in the appropriate sections and you've added your controller support!
 
 The board will store and remember the last video mode used, and re-initialise this mode on next boot after power off.
 
