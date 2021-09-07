@@ -13,10 +13,5 @@ The board will store and remember the last video mode used, and re-initialise th
 VajskiDs Consoles 2021
 
 
-Any packet corrections are based off averages i.e.
-Combo Received from Controller: 11000011 0xC3 is the correct byte
-Combo Received from Controller: 10000111 0x87 but these bytes break the loop counter, so just make them 0xC3 (needs >> 1)
-Combo Received from Controller: 11100001 0xE1 (needs <<2)
-Combo Received from Controller: 11110000 0xF0 etc.
 
 
