@@ -1,14 +1,10 @@
-# PSXTAL
-Just learning arduino, this took a while for me to be happy with it. Complete noob here.
-The code simply looks for a keypress combination and routes VCC to either Digital Pin 6 or 7.
-The idea is to switch XTALS in a console to swap between NTSC/PAL video modes instead of using a manual switch.
-The XTALS should only consume power in the low nano amps so this should be ok.
-No idea how I'm going to implement it in the console, it will likely need heavy modification.
+True NTSC 60hz / PAL 50hz selector and In Game Reset, all controlled by button combos on the controller! for PS1!
+
+Supports long reset (back to Xstation Menu) / Short reset (back to game being played on Xstation)
+Supports a small PCB i made that routes power to either system regions XTAL.
+
+PSXTAL is pretty well finished, all the genuine controller types are supported anyway. I can't say whether aftermarket ones will work as there's too many, and I'll never bother getting them.
+
+You'd only have to monitor through the serial port (just comment out everything bar the snapshot in the interrupt so you see streaming '11111') then make sure for a 3 button combo, you've actually flipped 3 bits. Add this hex value to the according 'OR's' in the appropriate sections and you've added your controller support!
 
 
-
-
-Update:
-PSXTAL is pretty well finished, may need to add support for another controller, it might map differently.
-Also contains in game reset for short or long pulses (awesome for Xstation)
- - VajskiDs
