@@ -40,7 +40,7 @@
 // At times it's absolutely perfect with each combo and matches the others above, but sometimes it get's in a mood, and the short reset combo starts throwing an
 // E5h packet, and when it's sequentially (videomode switch condition coming sooner than a reset doesn't help) it will switch video modes instead of resetting.
 
-// ...SO remapped for peace of mind. (though, due to this thing having different moods, the other combos could work at times too)
+// ...SO remapped for peace of mind , and error corrected for this controller so it won't really ever drop the loop
 
 
 // L1+R1+CIRCLE:  0xE5          Video Mode (PAL / NTSC) (error corrected existing combo)
