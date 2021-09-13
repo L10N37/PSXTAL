@@ -84,11 +84,11 @@ int counter = 0;
 
 void setup() {
 
-  DDRD = 0x00;    // clear every port / pin and pull them all low as outputs temporarily
+  DDRD = 0xFF;    // clear every port / pin and pull them all low as outputs temporarily
   PORTD = 0x00;   // any pins requiring different states are set up just after this,
-  DDRB = 0x00;    // leaves no floating inputs
+  DDRB = 0xFF;    // leaves no floating inputs
   PORTB = 0x00;
-  DDRC = 0x00;
+  DDRC = 0xFF;
   PORTC = 0x00;
 
   //default pin state (Crystals VCC to  D2 defaults on)
