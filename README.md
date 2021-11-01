@@ -14,6 +14,14 @@ You can use any other reset point from other IGR's, or wherever Pin 4 leads to o
 
 VajskiDs Consoles 2021
 
+version coming for PU20+ as DFO and this would be on ok
+to correct frequency for RGB output but not the sub carrier 
+for S video / composite. Will output 3 separate clocks 
+like the clock synthesiser does but one for PAL / NTSC 
+
+Sega megadrive version coming so instead of PAL60 with the 
+regular switch method it will also flick to a true NTSC
+XTAL and back.. also, no more need to drill holes and mount switches
 
 
 
