@@ -72,8 +72,6 @@
 #include <Adafruit_SI5351.h>
 #include<SPI.h>
 #include <EEPROM.h>
-#define NTSC 2
-#define PAL 3
 #define reset 4
 static int lastmode = 0; //not used
 volatile byte buffer = 0x00;
@@ -93,9 +91,6 @@ void setup() {
   DDRC = 0xFF;
   PORTC = 0x00;
 
-  //default pin state (Crystals VCC to  D2 defaults on)
-  pinMode (NTSC, OUTPUT);
-  pinMode (PAL, OUTPUT);
   pinMode (reset, INPUT);
   //Serial.begin(74880);    // only for dev monitoring
 
