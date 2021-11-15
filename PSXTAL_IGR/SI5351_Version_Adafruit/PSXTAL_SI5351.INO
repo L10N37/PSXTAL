@@ -1,4 +1,4 @@
-// PSXTAL V1.00
+// PSXTAL V1.00A (Adafruit SI5351 version)
 // Based off an EXTREMELY modified version of GolamMostafas code @ [https://forum.arduino.cc/t/spi-slave-mode-example-code/66617/4]
 // This was the giant kick starter to get things going, it intercepted and read inputs straight away! Google really done it's job, Cheers Golam!
 // Arduino wires currently soldered direct to the rear of the controller / memory card port (clock = D13, data = D11, attention = D10)
