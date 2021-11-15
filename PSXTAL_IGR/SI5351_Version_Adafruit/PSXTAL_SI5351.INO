@@ -84,6 +84,7 @@ Adafruit_SI5351 clockgen = Adafruit_SI5351();
 
 void setup() {
   clockgen.begin();
+  clockgen.enableOutputs(true);
   DDRD = 0xFF;    // clear every port / pin and pull them all low as outputs temporarily
   PORTD = 0x00;   // any pins requiring different states are set up just after this,
   DDRB = 0xFF;    // leaves no floating inputs
@@ -110,13 +111,12 @@ notfirstboot:
 
   // Retrieve last video mode from non volatile EEPROM mem and set initial video mode
   if (EEPROM.read(0) == 0x4E) {
-    //25 * 851.2 = 21280 /400 = 53.2Mhz
-    //Fractional PLL Setup (851.2Mhz)
-    clockgen.setupPLL(SI5351_PLL_A, 851, 1, 5);
-    //Fractional Divider (400)
-    clockgen.setupMultisynth(0, SI5351_PLL_A, 399, 5, 5);
-    clockgen.enableOutputs(true);
-    PAL_ = 1;
+    //25 * 16 = 400 /7.51 = 53.2Mhz
+    //Integer PLL Setup (400Mhz)
+    clockgen.setupPLLInt(SI5351_PLL_A, 16);
+    //Fractional Divider (7.51)
+    clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
+        PAL_ = 1;
 
   }
   else if (EEPROM.read(0) == 0x50) {
@@ -125,7 +125,6 @@ notfirstboot:
     clockgen.setupPLL(SI5351_PLL_A, 30, 30, 450);
     //Fractional Divider (14)
     clockgen.setupMultisynth(0, SI5351_PLL_A, 13, 5, 5);
-    clockgen.enableOutputs(true);
     NTSC_ = 1;
   }
 
