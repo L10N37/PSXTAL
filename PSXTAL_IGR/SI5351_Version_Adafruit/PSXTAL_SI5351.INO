@@ -94,7 +94,7 @@ void setup() {
   pinMode (reset, INPUT);
   //Serial.begin(74880);    // only for dev monitoring
 
-
+ 
 
   //***************************************************************************************************************************************************************
   if (EEPROM.read(0) == 0x4E || EEPROM.read(0) == 0x50) {     // Check EEPROM for a valid video mode, it won't exist at first ever boot
@@ -174,13 +174,14 @@ void sw_video() {
 
 
   if (PAL_ == 1) {              // 60HZ NTSC
-    clockgen.enableOutputs(false);
-    //25 * 851.2 = 21280 /400 = 53.2Mhz
-    //Fractional PLL Setup (851.2Mhz)
-    clockgen.setupPLL(SI5351_PLL_A, 851, 1, 5);
-    //Fractional Divider (400)
-    clockgen.setupMultisynth(0, SI5351_PLL_A, 399, 5, 5);
-    clockgen.enableOutputs(true);
+    
+    //25 * 16 = 400 /7.51 = 53.2Mhz
+    //Integer PLL Setup (400Mhz)
+    clockgen.setupPLLInt(SI5351_PLL_A, 16);
+    
+    //Fractional Divider (7.51)
+    clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
+    
 
     NTSC_ = 1;
     PAL_ = 0;
@@ -190,13 +191,13 @@ void sw_video() {
 
   }
   else if (NTSC_ == 1)  {       // 50HZ PAL
-    clockgen.enableOutputs(false);
+    
     //25 * 30.06666 = 751.665 /14 = 53.69Mhz
     //Fractional PLL Setup (30.06666Mhz)
     clockgen.setupPLL(SI5351_PLL_A, 30, 30, 450);
     //Fractional Divider (14)
     clockgen.setupMultisynth(0, SI5351_PLL_A, 13, 5, 5);
-    clockgen.enableOutputs(true);
+    
 
     NTSC_ = 0;
     PAL_ = 1;
@@ -285,4 +286,4 @@ void loop() {
   Combo Received from Controller: 10001111 8Fh
   Combo Received from Controller: 11000111 C7h
   Combo Received from Controller: 11000111 C7h
-*/
+*/ 
