@@ -174,23 +174,6 @@ void sw_video() {
 
   if (PAL_ == 1) {              // 60HZ NTSC
     
-    //25 * 16 = 400 /7.51 = 53.2Mhz
-    //Integer PLL Setup (400Mhz)
-    clockgen.setupPLLInt(SI5351_PLL_A, 16);
-    
-    //Fractional Divider (7.51)
-    clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
-    
-
-    NTSC_ = 1;
-    PAL_ = 0;
-    buffer = 0x00;
-    EEPROM.update(0, 0x50);   //'P'
-
-
-  }
-  else if (NTSC_ == 1)  {       // 50HZ PAL
-    
     //25 * 30.06666 = 751.665 /14 = 53.69Mhz
     //Fractional PLL Setup (30.06666Mhz)
     clockgen.setupPLL(SI5351_PLL_A, 30, 30, 450);
@@ -203,6 +186,23 @@ void sw_video() {
     buffer = 0x00;
     EEPROM.update(0, 0x4E);   //'N'
 
+
+  }
+  else if (NTSC_ == 1)  {       // 50HZ PAL
+    
+
+    //25 * 16 = 400 /7.51 = 53.2Mhz
+    //Integer PLL Setup (400Mhz)
+    clockgen.setupPLLInt(SI5351_PLL_A, 16);
+    
+    //Fractional Divider (7.51)
+    clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
+    
+
+    NTSC_ = 1;
+    PAL_ = 0;
+    buffer = 0x00;
+    EEPROM.update(0, 0x50);   //'P'
   }
 }
 
