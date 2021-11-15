@@ -75,8 +75,7 @@
 #define reset 4
 static int lastmode = 0; //not used
 volatile byte buffer = 0x00;
-boolean NTSC_ = 0; // flags signifying output mode, instead of digital reading the pins just check the flag
-boolean PAL_ = 0;  // to determine the output mode instead
+boolean NTSC_ = 0; // flag signifying output mode
 int counter = 0;
 Adafruit_SI5351 clockgen = Adafruit_SI5351();
 
@@ -116,7 +115,7 @@ notfirstboot:
     clockgen.setupPLL(SI5351_PLL_A, 30, 30, 450);
     //Fractional Divider (14)
     clockgen.setupMultisynth(0, SI5351_PLL_A, 13, 5, 5);
-    PAL_ = 1;
+    NTSC_ = true;
 
   }
   else if (EEPROM.read(0) == 0x50) {
@@ -125,7 +124,7 @@ notfirstboot:
     clockgen.setupPLLInt(SI5351_PLL_A, 16);
     //Fractional Divider (7.51)
     clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
-    NTSC_ = 1;
+    NTSC_ = false;
   }
 
 }
@@ -172,7 +171,7 @@ ISR (SPI_STC_vect) {            // interrupt routine function
 void sw_video() {
 
 
-  if (PAL_ == 1) {              // 60HZ NTSC
+  if (NTSC_ == false) {              // 60HZ NTSC
     
     //25 * 30.06666 = 751.665 /14 = 53.69Mhz
     //Fractional PLL Setup (30.06666Mhz)
@@ -181,14 +180,14 @@ void sw_video() {
     clockgen.setupMultisynth(0, SI5351_PLL_A, 13, 5, 5);
     
 
-    NTSC_ = 0;
+    NTSC_ = true;
     PAL_ = 1;
     buffer = 0x00;
     EEPROM.update(0, 0x4E);   //'N'
 
 
   }
-  else if (NTSC_ == 1)  {       // 50HZ PAL
+  else if (NTSC_ == true)  {       // 50HZ PAL
     
 
     //25 * 16 = 400 /7.51 = 53.2Mhz
@@ -199,7 +198,7 @@ void sw_video() {
     clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
     
 
-    NTSC_ = 1;
+    NTSC_ = false;
     PAL_ = 0;
     buffer = 0x00;
     EEPROM.update(0, 0x50);   //'P'
