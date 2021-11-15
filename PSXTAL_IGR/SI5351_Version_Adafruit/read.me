@@ -1,0 +1,5 @@
+This version uses the ADAFRUIT SI5351 I2C Arduino clock generator to switch between NTSC and PAL clocks on the same clock-out pin on the fly, suitable for PU18/PU8 models
+that still use an actual crystal as oppose to a clock synthesiser (like this)
+
+I will make a version for later models eventually, it will output both the subcarrier for PAL/ NTSC (for colour composite/S-Video) and the correct GPU frequency for 50/60hz.
+The PU8/PU18 subcarrier is derived from a division of the GPU clock, hence, on these versions of PS1 the subcarrier will be correct with just one clock providing 2 different outputs :)
