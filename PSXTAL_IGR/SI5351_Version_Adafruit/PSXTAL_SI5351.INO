@@ -109,22 +109,22 @@ notfirstboot:
 
 
 
-  // Retrieve last video mode from non volatile EEPROM mem and set initial video mode
-  if (EEPROM.read(0) == 0x4E) {
-    //25 * 16 = 400 /7.51 = 53.2Mhz
-    //Integer PLL Setup (400Mhz)
-    clockgen.setupPLLInt(SI5351_PLL_A, 16);
-    //Fractional Divider (7.51)
-    clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
-        PAL_ = 1;
-
-  }
-  else if (EEPROM.read(0) == 0x50) {
+    // Retrieve last video mode from non volatile EEPROM mem and set initial video mode
+    if (EEPROM.read(0) == 0x4E) {
     //25 * 30.06666 = 751.665 /14 = 53.69Mhz
     //Fractional PLL Setup (30.06666Mhz)
     clockgen.setupPLL(SI5351_PLL_A, 30, 30, 450);
     //Fractional Divider (14)
     clockgen.setupMultisynth(0, SI5351_PLL_A, 13, 5, 5);
+    PAL_ = 1;
+
+  }
+  else if (EEPROM.read(0) == 0x50) {
+    //25 * 16 = 400 /7.51 = 53.2Mhz
+    //Integer PLL Setup (400Mhz)
+    clockgen.setupPLLInt(SI5351_PLL_A, 16);
+    //Fractional Divider (7.51)
+    clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
     NTSC_ = 1;
   }
 
