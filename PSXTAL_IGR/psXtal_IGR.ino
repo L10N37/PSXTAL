@@ -17,6 +17,7 @@
 // SCPH110 DUAL SHOCK CONTROLLER IN DIGITAL MODE *********************************************************************************************************
 // + SCPH1180 LARGE MADE IN JAPAN ANALOGUE CONTROLLER IN DIGITAL MODE
 // + SCPH10010 PS2 DUAL SHOCK 2 ANALOGUE CONTROLLER IN DIGITAL MODE
+// + SCPH110 PSOne DUAL SHOCK
 
 // L1+R1+CIRCLE:  0xE5         Video Mode (PAL / NTSC)
 // R1+TRIANGLE:   0XF3                  Short Reset (quick press, restart game on Xstation!)
