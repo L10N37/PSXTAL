@@ -181,7 +181,6 @@ void sw_video() {
     
 
     NTSC_ = true;
-    PAL_ = 1;
     buffer = 0x00;
     EEPROM.update(0, 0x4E);   //'N'
 
@@ -199,7 +198,6 @@ void sw_video() {
     
 
     NTSC_ = false;
-    PAL_ = 0;
     buffer = 0x00;
     EEPROM.update(0, 0x50);   //'P'
   }
