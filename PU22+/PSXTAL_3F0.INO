@@ -46,7 +46,7 @@ void setup() {
 
 
   //PAL console starts high on sense pin/NTSC for about 6 seconds, screen will show 480/60i , then goes low and launches in PAL 575/50i -delay skips these switches
-  //console should launch straight straight into it's native video mode.
+  //console should launch straight into it's native video mode.
 
   delay (6000);
 
