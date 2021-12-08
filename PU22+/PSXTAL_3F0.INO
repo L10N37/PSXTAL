@@ -16,7 +16,7 @@
 //  `---`               `---'     `--`
 // VajskiDs Consoles 2021
 // For Adafruit SI5351 clock gen boards
-//                                                                      Version: PU22+ WIP
+
 
 #include <Adafruit_SI5351.h>
 #define sensepin 2
