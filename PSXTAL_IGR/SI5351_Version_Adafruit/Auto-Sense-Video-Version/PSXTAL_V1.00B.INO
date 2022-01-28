@@ -1,8 +1,5 @@
  /* PSXTAL V1.00B
 
-
-THIS IS A QUICK 15 MINUTE HACK UP, IT WILL BE TESTED SHORTLY, IF THIS TEXT IS HERE, IT'S NOT TESTED
-
   Adafruit SI5351 version, autoswitching region on this version, not controlled by button combos.
   RESET HAS BEING MOVED FROM DIGITAL PIN 2 TO DIGITAL PIN 9
 
@@ -17,7 +14,7 @@ THIS IS A QUICK 15 MINUTE HACK UP, IT WILL BE TESTED SHORTLY, IF THIS TEXT IS HE
   + SCPH110 PSOne DUAL SHOCK
 
   AUTO-DETECT                    Video Mode (PAL / NTSC)
-  R1+TRIANGLE:   0XF3                  Short Reset (quick press, restart game on Xstation!)
+  R1+TRIANGLE:   0xF3                  Short Reset (quick press, restart game on Xstation!)
   L1+TRIANGLE:   0xEB                        Long Reset (2second pulse, return to Xstation menu!)
 
 
@@ -93,6 +90,8 @@ void setup() {
   pinMode (reset, INPUT);
   //Serial.begin(74880);    // only for dev monitoring
 
+   
+
 }
 
 
@@ -106,7 +105,7 @@ void NTSC() {
   //Fractional Divider (14)
   clockgen.setupMultisynth(0, SI5351_PLL_A, 13, 5, 5);
 
-  NTSC_MODE = "FALSE";
+  NTSC_MODE = "TRUE";
 
 }
 
@@ -121,7 +120,7 @@ void PAL() {
   //Fractional Divider (7.51)
   clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
 
-  NTSC_MODE = "TRUE";
+  NTSC_MODE = "FALSE";
 
 }
 
