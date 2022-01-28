@@ -14,7 +14,8 @@ the correct crystal at next boot.
 PSXTAL V1.00A: For PU8 / PU18 with XTALS and not later models using a clock synth circuit.
 Uses a buttom combo (L1+R1+Circle, held for ~5 seconds) to switch video modes.
 Reset on D2. 
-Uses an SI5351 clock synth board.
+Uses an SI5351 clock synth board.Stores the last video mode in EEPROM and retrieves last used video mode/ programs the
+SI5351 to last used mode on boot.
 
 
 
