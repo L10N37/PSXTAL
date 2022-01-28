@@ -66,9 +66,8 @@
 
 #include <Adafruit_SI5351.h>
 #include<SPI.h>
-#include <EEPROM.h>
 #define reset 9                           // NOTE: THIS RESET PIN HAS BEING CHANGED FROM 2 TO 9 ON THIS VERSION!
-#define sensepin 2                        // PIN 2 NOW DETECTS REGION OF GAME FOR VIDEOMODE      
+//#define sensepin 2                        // PIN 2 NOW DETECTS REGION OF GAME FOR VIDEOMODE      
 static int lastmode = 0; //not used
 volatile byte buffer = 0x00;
 int counter = 0;
