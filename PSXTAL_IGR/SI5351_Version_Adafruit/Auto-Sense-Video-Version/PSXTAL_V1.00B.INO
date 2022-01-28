@@ -1,4 +1,5 @@
  /* PSXTAL V1.00B
+STILL IN TESTING.
 
   Adafruit SI5351 version, autoswitching region on this version, not controlled by button combos.
   RESET HAS BEING MOVED FROM DIGITAL PIN 2 TO DIGITAL PIN 9
