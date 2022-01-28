@@ -7,7 +7,8 @@ Uses a buttom combo (L1+R1+Circle, held for ~5 seconds) to switch video modes.
 Reset on D2. Uses 2 physical XTALS on a PCB, the PCB doubles up all traces to the crystal oscillators EXCEPT the
 power rail. The Arduino simply switches the power rails between the crystals, either activating/de-activating
 them, so that one is active at a time. Stores the last video mode in EEPROM and retrieves last used video mode/ re-activates
-the correct crystal at next boot.
+the correct crystal at next boot. Have done complete play throughs on Parasite Eve and half of Parasite Eve 2, no issues. Have also installed
+on multiple pre-modded consoles with no issues.
 
 
 
@@ -15,7 +16,7 @@ PSXTAL V1.00A: For PU8 / PU18 with XTALS and not later models using a clock synt
 Uses a buttom combo (L1+R1+Circle, held for ~5 seconds) to switch video modes.
 Reset on D2. 
 Uses an SI5351 clock synth board. Stores the last video mode in EEPROM and retrieves last used video mode/ programs the
-SI5351 to last used mode on boot.
+SI5351 to last used mode on boot. Have installed on pre-modded consoles with no issues.
 
 
 
