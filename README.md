@@ -33,3 +33,5 @@ Automatically senses and switches between the correct GPU clock AND Sub-Carrier 
 on game region detection (automatic via sense pin). Skips the normal NTSC443 mode at boot (on PAL models)
 and launches straight into the native consoles video mode. This has being used a lot on a personal console
 with a Mayumi V4 (didn't want 2 arduinos in the system) with zero issues.
+
+Note: PU22+ folder was named mistakingly, it should have being PU20+, hence at this stage 2 folders from when it was realised.
