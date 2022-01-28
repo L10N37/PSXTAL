@@ -1,5 +1,4 @@
- /* PSXTAL V1.00B
-STILL IN TESTING.
+/* PSXTAL V1.00B
 
   Adafruit SI5351 version, autoswitching region on this version, not controlled by button combos.
   RESET HAS BEING MOVED FROM DIGITAL PIN 2 TO DIGITAL PIN 9
@@ -67,8 +66,9 @@ STILL IN TESTING.
 
 #include <Adafruit_SI5351.h>
 #include<SPI.h>
+#include <EEPROM.h>
 #define reset 9                           // NOTE: THIS RESET PIN HAS BEING CHANGED FROM 2 TO 9 ON THIS VERSION!
-//#define sensepin 2                        // PIN 2 NOW DETECTS REGION OF GAME FOR VIDEOMODE      
+#define sensepin 2                        // PIN 2 NOW DETECTS REGION OF GAME FOR VIDEOMODE
 static int lastmode = 0; //not used
 volatile byte buffer = 0x00;
 int counter = 0;
@@ -86,7 +86,7 @@ void setup() {
   PORTB = 0x00;
   DDRC = 0xFF;
   PORTC = 0x00;
-
+  pinMode (sensepin, INPUT);
   pinMode (reset, INPUT);
   //Serial.begin(74880);    // only for dev monitoring
 
