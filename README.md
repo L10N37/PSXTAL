@@ -3,9 +3,8 @@ Project History
 
 
 PSXTAL V1.00: For PU8 / PU18 with XTALS and not later models using a clock synth circuit.
-Uses a buttom combo (L1+R1+Circle, held for ~5 seconds) to switch video modes
-Reset on D2
-Uses 2 physical XTALS on a PCB, the PCB doubles up all traces to the crystal oscillators EXCEPT the
+Uses a buttom combo (L1+R1+Circle, held for ~5 seconds) to switch video modes.
+Reset on D2. Uses 2 physical XTALS on a PCB, the PCB doubles up all traces to the crystal oscillators EXCEPT the
 power rail. The Arduino simply switches the power rails between the crystals, either activating/de-activating
 them so that one is active at a time. Stores the last video mode in EEPROM and retrieves/ re-activates
 the correct crystal at next boot.
@@ -13,8 +12,8 @@ the correct crystal at next boot.
 
 
 PSXTAL V1.00A: For PU8 / PU18 with XTALS and not later models using a clock synth circuit.
-Uses a buttom combo (L1+R1+Circle, held for ~5 seconds) to switch video modes
-Reset on D2
+Uses a buttom combo (L1+R1+Circle, held for ~5 seconds) to switch video modes.
+Reset on D2. 
 Uses an SI5351 clock synth board.
 
 
