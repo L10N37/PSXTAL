@@ -30,4 +30,5 @@ PSXTAL-3FO: For PU20, PU22, PU23 and PSOne models: At this stage doesn't offer I
 Provides CPU Clock, GPU Clock and Sub-Carrier clocks. 
 Automatically senses and switches between the correct GPU clock AND Sub-Carrier clocks depending
 on game region detection (automatic via sense pin). Skips the normal NTSC443 mode at boot (on PAL models)
-and launches straight into the native consoles video mode.
+and launches straight into the native consoles video mode. This has being used a lot on a personal console
+with a Mayumi V4 (didn't want 2 arduinos in the system) with zero issues.
