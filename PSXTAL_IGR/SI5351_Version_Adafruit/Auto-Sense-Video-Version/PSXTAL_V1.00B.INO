@@ -1,4 +1,5 @@
-/* PSXTAL V1.00B
+ /* PSXTAL V1.00B
+
 
 THIS IS A QUICK 15 MINUTE HACK UP, IT WILL BE TESTED SHORTLY, IF THIS TEXT IS HERE, IT'S NOT TESTED
 
@@ -73,7 +74,6 @@ THIS IS A QUICK 15 MINUTE HACK UP, IT WILL BE TESTED SHORTLY, IF THIS TEXT IS HE
 #define sensepin 2                        // PIN 2 NOW DETECTS REGION OF GAME FOR VIDEOMODE      
 static int lastmode = 0; //not used
 volatile byte buffer = 0x00;
-boolean NTSC_ = 0; // flag signifying output mode
 int counter = 0;
 String NTSC_MODE = "LAUNCH";
 Adafruit_SI5351 clockgen = Adafruit_SI5351();
@@ -106,7 +106,7 @@ void NTSC() {
   //Fractional Divider (14)
   clockgen.setupMultisynth(0, SI5351_PLL_A, 13, 5, 5);
 
-  NTSC_ = true;
+  NTSC_MODE = "FALSE";
 
 }
 
@@ -121,7 +121,7 @@ void PAL() {
   //Fractional Divider (7.51)
   clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
 
-  NTSC_ = false;
+  NTSC_MODE = "TRUE";
 
 }
 
