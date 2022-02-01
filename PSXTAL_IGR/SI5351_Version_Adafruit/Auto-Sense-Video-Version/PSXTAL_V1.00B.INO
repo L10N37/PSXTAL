@@ -56,7 +56,7 @@
   |   | :      `--'---' |   : / \  \  ;   '---'   |  | ,'        '---'      + wireless IN GAME RESET (This version is for PSX models using XTALS, not later models with a clock synth)
   `---'.|               ;   |/   \  ' |           `--''
   `---`               `---'     `--`
-  VajskiDs Consoles 2021
+  VajskiDs Consoles [Jan 2022]
   Adafruit SI5351 Version!
 
 */
