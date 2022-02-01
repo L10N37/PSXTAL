@@ -97,7 +97,7 @@ void NTSC() {
 
 
   //25 * 30.06666 = 751.665 /14 = 53.69Mhz
-  //Fractional PLL Setup (30.06666Mhz)
+  //Fractional PLL Setup (751.66Mhz)
   clockgen.setupPLL(SI5351_PLL_A, 30, 30, 450);
   
   //Fractional Divider (14)
@@ -143,7 +143,6 @@ void checkvideomode() {
 
 
 
-
 ISR (SPI_STC_vect) {            // interrupt routine function
 
 
@@ -166,12 +165,8 @@ ISR (SPI_STC_vect) {            // interrupt routine function
 }
 
 
-
-
 // buffer = SPDR;              dev/ debug, star out above code in interrupt function and uncomment
 //}
-
-
 
 
 
