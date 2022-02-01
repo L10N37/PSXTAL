@@ -56,7 +56,7 @@
   |   | :      `--'---' |   : / \  \  ;   '---'   |  | ,'        '---'      + wireless IN GAME RESET (This version is for PSX models using XTALS, not later models with a clock synth)
   `---'.|               ;   |/   \  ' |           `--''
   `---`               `---'     `--`
-  VajskiDs Consoles 2022
+  VajskiDs Consoles 2021
   Adafruit SI5351 Version!
 
 */
@@ -66,10 +66,8 @@
 
 #include <Adafruit_SI5351.h>
 #include<SPI.h>
-#include <EEPROM.h>
 #define reset 9                           // NOTE: THIS RESET PIN HAS BEING CHANGED FROM 2 TO 9 ON THIS VERSION!
 #define sensepin 2                        // PIN 2 NOW DETECTS REGION OF GAME FOR VIDEOMODE
-static int lastmode = 0; //not used
 volatile byte buffer = 0x00;
 int counter = 0;
 String NTSC_MODE = "LAUNCH";
@@ -91,7 +89,6 @@ void setup() {
   //Serial.begin(74880);    // only for dev monitoring
 
    
-
 }
 
 
@@ -150,7 +147,7 @@ ISR (SPI_STC_vect) {            // interrupt routine function
 
 
   //capture IGR packets only
-  if (SPDR == 0xE5 || SPDR == 0xF3 || SPDR == 0xEB || SPDR == 0xD9 || SPDR == 0xDB || SPDR == 0xDD || SPDR == 0xE5 || SPDR == 0x87 || SPDR == 0xC7) {
+  if (SPDR == 0xF3 || SPDR == 0xDB || SPDR == 0xEB || SPDR == 0xDD || SPDR == 0x87 || SPDR == 0xC7) {
     buffer = SPDR;              // take a snap shot of the SPDR register and store it in 'buffer', but only if it's an error free combo capture byte
   }
 
