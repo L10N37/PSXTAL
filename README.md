@@ -25,7 +25,8 @@ SI5351 to last used mode on boot. Have installed on pre-modded consoles with no 
 ### PSXTAL V1.00B: For PU8 / PU18 with XTALS (not later models using a clock synth circuit).<br />
 Auto detection of regions for video mode switching.<br />
 Video mode sense pin D2, Reset D9.<br />
-Uses an SI5351 clock synth board. Reset (IGR) combos are in the INO.<br />
+Uses an SI5351 clock synth board.<br />
+Reset (IGR) combos are in the INO.<br />
 <br />
 <br />
 <br />
@@ -33,7 +34,8 @@ Uses an SI5351 clock synth board. Reset (IGR) combos are in the INO.<br />
 Provides CPU Clock, GPU Clock and Sub-Carrier clocks.<br />
 Automatically senses and switches between the correct GPU clock AND Sub-Carrier clocks depending<br />
 on game region detection (automatic via sense pin). Skips the normal NTSC443 mode at boot (on PAL models)<br />
-and launches straight into the native consoles video mode. This has being used a lot on a personal console<br />
+and launches straight into the native consoles video mode.<br />
+This has being used a lot on a personal console<br />
 with a Mayumi V4 (didn't want 2 arduinos in the system) with zero issues.<br />
 <br />
 Note: PU22+ folder was named mistakingly, it should have being PU20+, hence at this stage 2 folders from when it was realised.<br />
@@ -44,7 +46,8 @@ Auto detection of regions for video mode switching.<br />
 Video mode sense pin D2, Reset D9<br />
 NTSC XTAL PIN (From PSXTAL Dual XTAL PCB) to D16/A2<br />
 PAL XTAL PIN (From PSXTAL Dual XTAL PCB) to D15/A1<br />
-Uses the PSXTAL Dual XTAL PCB from the original V1.00. Reset (IGR) combos are in the INO (They're the same as other versions).<br />
+Uses the PSXTAL Dual XTAL PCB from the original V1.00.<br />
+Reset (IGR) combos are in the INO (They're the same as other versions).<br />
 <br />
 <br />
 <br />
