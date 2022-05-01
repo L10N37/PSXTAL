@@ -35,3 +35,15 @@ and launches straight into the native consoles video mode. This has being used a
 with a Mayumi V4 (didn't want 2 arduinos in the system) with zero issues.
 
 Note: PU22+ folder was named mistakingly, it should have being PU20+, hence at this stage 2 folders from when it was realised.
+
+
+### PSXTAL V1.00Bx: For PU8 / PU18 with XTALS (not later models using a clock synth circuit).
+Auto detection of regions for video mode switching. 
+Video mode sense pin D2, Reset D9 
+NTSC XTAL PIN (From PSXTAL Dual XTAL PCB) to D16/A2
+PAL XTAL PIN (From PSXTAL Dual XTAL PCB) to D15/A1
+Uses the PSXTAL Dual XTAL PCB from the original V1.00. Reset (IGR) combos are in the INO (They're the same as other versions).
+
+
+
+### Photos are in folders of example installs/ Controller and wiring for D10,D11,D13 (You can also wire directly to the rear of the controller plugs input PCB). There are also wiring photos for the SI5351 clock synth board. You can use the SO pin from DFO install diagrams to run the sense pin to on auto sensing of region versions. On PU8 kynar wire fits through a small slit in the board that has nothing underneath it (when using DFO diagram point), otherwise use the same via on the top of the board. On PU18 there's a demonstration video on youtube showing the preferred sense pin location on the console mainboard.
