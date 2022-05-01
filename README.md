@@ -47,6 +47,7 @@ NTSC XTAL PIN (From PSXTAL Dual XTAL PCB) to D16/A2<br />
 PAL XTAL PIN (From PSXTAL Dual XTAL PCB) to D15/A1<br />
 Uses the PSXTAL Dual XTAL PCB from the original V1.00.<br />
 Reset (IGR) combos are in the INO (They're the same as other versions).<br />
+The NTSC and PAL functions differ slightly from the original V1.00. Rather than writing one pin low (to deactivate) and one pin high (to activate) on region switches, it instead toggles the unused pin to an input and the used pin to an output (The analogue/digital pins used still had voltage on them when written low, so the unused XTAL was receiving a small amount of current, causing interference).
 <br />
 <br />
 <br />
