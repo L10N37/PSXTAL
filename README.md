@@ -35,8 +35,7 @@ Provides CPU Clock, GPU Clock and Sub-Carrier clocks.<br />
 Automatically senses and switches between the correct GPU clock AND Sub-Carrier clocks depending<br />
 on game region detection (automatic via sense pin). Skips the normal NTSC443 mode at boot (on PAL models)<br />
 and launches straight into the native consoles video mode.<br />
-This has being used a lot on a personal console<br />
-with a Mayumi V4 (didn't want 2 arduinos in the system) with zero issues.<br />
+This has being used a lot on a personal console with a Mayumi V4 (didn't want 2 arduinos in the system) with zero issues.
 <br />
 Note: PU22+ folder was named mistakingly, it should have being PU20+, hence at this stage 2 folders from when it was realised.<br />
 <br />
