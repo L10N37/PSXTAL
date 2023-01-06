@@ -54,3 +54,9 @@ The NTSC and PAL functions differ slightly from the original V1.00. Rather than 
 ### Photos are in folders of example installs/ controller wiring for D10,D11,D13 (You can also wire directly to the rear of the controller plugs input PCB). There are also wiring photos for the SI5351 clock synth board. You can use the SO pin from DFO install diagrams to run the sense pin to on auto sensing of region versions. On PU8 kynar wire fits through a small slit in the board that has nothing underneath it (when using DFO diagram point), otherwise use the same via on the top of the board. On PU18 there's a demonstration video on youtube showing the preferred sense pin location on the console mainboard.
 
 Other versions are WIP. Don't use them.
+
+
+To Do:
+
+A stand-alone PCB (modboard) using SI5351 IC with minimal external components + Atmega 168P or 328P MCU with minimal external components - should get away with 
+just bypass caps for both + what ever else is required.
