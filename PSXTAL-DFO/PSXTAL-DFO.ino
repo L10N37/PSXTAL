@@ -4,7 +4,8 @@ Adafruit_SI5351 clockgen = Adafruit_SI5351();
 
 
 void setup(){
-
+clockgen.begin();
+clockgen.enableOutputs(true);
 DDRD = 0xFF;    // clear every pin on PD and pull them all low as outputs temporarily  (The Port D stuff is especially important for videomode sensing to work)
 PORTD = 0x00;   // any pins requiring different states are set up just after this
 pinMode (sensepin, INPUT);
