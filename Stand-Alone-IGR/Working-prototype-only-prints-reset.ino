@@ -11,6 +11,7 @@
 // Working prototype, prints reset when the combination - L1 + L2 + R1 + R2 + SEL + START is pressed in digital or analogue mode
 // Info all here: https://store.curiousinventor.com/guides/PS2/, though i get 0x54 as byte 3, not 0x5A
 // Short and long reset combos to be decided, then actual reset functionality added
+// also fail safe it with an extra byte to confirm its coming from a controller and not a memory card
 
 
 #define clk 1
