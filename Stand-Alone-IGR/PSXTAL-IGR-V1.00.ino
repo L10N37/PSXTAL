@@ -53,14 +53,14 @@ void capturepackets() //Main FOR = bytes, nested FOR = bits
 
                 while(clockishigh);   //pause (clock high idle between byte transmissions)
                   
-                    for (auto bitPosition = 0; bitPosition < 8; bitPosition++) {                              // Clocks gone low, transmission started, ready to capture 8 bits
+                    for (auto bitPosition = 0; bitPosition < 8; bitPosition++) {                  // Clocks gone low, transmission started, ready to capture 8 bits
                         
-                        while(clockishigh);   //pause (clock high idle between transmissions)                 // This is needed for every bit after the first
+                        while(clockishigh);   //pause (clock high idle between transmissions)     // This is needed for every bit after the first
                                                      
-                            if (ControllerDataStateIdling) bitSet(ControllerBytes, bitPosition);              // grab the bits
+                            if (ControllerDataStateIdling) bitSet(ControllerBytes, bitPosition);  // grab the bits
                                 else bitClear(ControllerBytes, bitPosition);
 
-                                  while(!clockishigh);                                                        // Wait for the clock to rise again and re-loop, perfect reads *everytime* !
+                                  while(!clockishigh);                                            // Wait for the clock to rise again and re-loop, perfect reads *everytime* !
                                                 
                                                                                                                                                                                       
                                                                                 }
