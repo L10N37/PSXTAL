@@ -1,0 +1,23 @@
+PU-18 Wiring
+
+All orientation is with the multiout facing away from you.
+
+Nano		      Function		  PU-18
+5V			      Power			    Any 5V source
+GND			      Ground			  Any GND point
+A1 - Pin15	  Enable NTSC		NTSC DFO PCB
+A2 - Pin16	  Enable PAL		PAL DFO PCB
+D2 - Pin2	    Sense region	Pin157 of GPU - VIA of trace under silkscreen "157" near upper left of GPU
+D9 - Pin9	    Reset			    Pin5 of PSU - Lower right of two SMC's next to silkscreen "CCP2E50" above PSU plug
+D10 - Pin10	  Attention		  Controller Diode 4
+D11 - Pin11	  Data			    Controller Diode 5
+D13 - Pin13	  Clock			   Controller Diode 7
+
+
+Controller Diodes
+
+PU-18
+Solder to the lower side of the diodes or the VIA's directly below them.
+
+[][][] [][][] []
+1 2 3  4 5 6  7
