@@ -16,5 +16,15 @@ or the atmega pro micro (these come with USB
 connectivity / bootloader for flashing straight 
 from Arduino IDE, but cost a bit more).
 
-button combos coming 
+button combos are in the ino sketch 
+
+If you use LGT8F328P and don't use the library used
+for UberNee, you will likely have a short reset 
+for both combos because the other libraries have
+terrible delay timings.
+
+Either use the library used for UnerNee by
+LaZsolt or, increase the delay from 2000.
+(I'm not sure how much you'll need to increase it)
+
 
