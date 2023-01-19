@@ -1,3 +1,4 @@
+# Flashing Infos
 
 Due to the price at the time ...the board really should have being designed for LTG8F328P
 It was designed for ATMEGA328P though.
@@ -17,7 +18,7 @@ At this stage, I can not find bare LGT8F328P for any cheaper. A week or two back
 This makes me feel a little better about the current design.
 
 
-Now the issue with no bootloader.
+## Now the issue with no bootloader.
 
 You can not install the ATMEGA328P straight onto the PCB and flash the DFO program over UART with a serial-USB adapter and header holes due to the missing
 bootloader.
@@ -34,7 +35,7 @@ You can flash via ISP using another MCU - or with an XGecu Pro TL866II +
 You need the TQFP32 to DIP28 adapter which slots straight into the TL866II+ to flash either the bootloader with correct fuse settings or the DFO software directly.
 
 
-Next option:
+## Next option:
 
 Leave the board as is, the TL866II+ is basically the standard among hobbyists now for flashing needs and a lot of people own these.
 
@@ -42,14 +43,14 @@ So I've provided the fuse settings for flashing the Bootloader in XGPro, then fi
 
 
 
-Next Option:
+##Next Option:
 
 Flash the exported DFO apps HEX directly via the XGpro software, then install it onto the PCB - I would assume leaving the fuse settings on default would work.
 
 This renders the UART / serial->USB programming header on the board useless and you won't be able to make any changes to the software flashed on the MCU after.
 
 
-Further notes: 
+##Further notes: 
 
 If you do your research you could probably flash the DFO software directly and set the correct fuses so the MCU runs without the 16mhz XTAL, it would run @ 1mhz - 
 for such a small simple app, this I would assume, will suffice.
