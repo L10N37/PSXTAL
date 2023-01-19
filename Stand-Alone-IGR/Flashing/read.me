@@ -14,6 +14,8 @@ The Atmega clones cost (if you look hard enough) me 36.10AUD for a quantity of 1
 They actually arrived super quick with the pin adapter too. so $3.60ea.
 
 At this stage, I can not find bare LGT8F328P for any cheaper. A week or two back they were obtainable for about 2.00AUD ea. (both prices inclusive of shipping)
+-I must add, this is really stupid ..because the small dev board versions with USB-Serial header holes are like $1.50, they charge more for a bare IC!
+
 
 This makes me feel a little better about the current design.
 
@@ -32,10 +34,18 @@ You can flash via ISP using another MCU - or with an XGecu Pro TL866II +
 
 
 
+
+
+
+
+
+
+## Next options:
+
 You need the TQFP32 to DIP28 adapter which slots straight into the TL866II+ to flash either the bootloader with correct fuse settings or the DFO software directly.
 
 
-## Next option:
+## Bootloader then UART:
 
 Leave the board as is, the TL866II+ is basically the standard among hobbyists now for flashing needs and a lot of people own these.
 
@@ -43,7 +53,7 @@ So I've provided the fuse settings for flashing the Bootloader in XGPro, then fi
 
 
 
-## Next Option:
+## Direct:
 
 Flash the exported DFO apps HEX directly via the XGpro software, then install it onto the PCB - I would assume leaving the fuse settings on default would work.
 
@@ -60,4 +70,4 @@ You could then omit the 16mhz xtal and it's bypass capacitor.
 The 16mhz XTAL is required for the bootloader / UART flashing.
 
 
-The TL866II+ also comes with a cable that has a header for ISP flashing - that's also an option, may increase the board size which is currently ...tiny.
+The TL866II+ also comes with a cable that has a header for ISP flashing - that's also an option, but may increase the board size which is currently ...tiny.
