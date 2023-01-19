@@ -47,3 +47,13 @@ Next Option:
 Flash the exported DFO apps HEX directly via the XGpro software, then install it onto the PCB - I would assume leaving the fuse settings on default would work.
 
 This renders the UART / serial->USB programming header on the board useless and you won't be able to make any changes to the software flashed on the MCU after.
+
+
+Further notes: 
+
+If you do your research you could probably flash the DFO software directly and set the correct fuses so the MCU runs without the 16mhz XTAL, it would run @ 1mhz - 
+for such a small simple app this I would assume, will suffice.
+
+You could then omit the 16mhz xtal and it's bypass capacitor.
+
+The 16mhz XTAL is required for the bootloader / UART flashing.
