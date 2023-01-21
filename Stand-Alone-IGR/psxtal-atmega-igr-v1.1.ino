@@ -44,7 +44,6 @@ and see your desired combos printed on the serial monitor (just hold the combo),
 #define shortresetcombo ControllerByteArray[3] == 0xF6 && ControllerByteArray[4] == 0xFC || ControllerByteArray[3] == 0xF6 && ControllerByteArray[4] == 0x7E
 #define longresetcombo  ControllerByteArray[3] == 0xFE && ControllerByteArray[4] == 0xBC || ControllerByteArray[3] == 0xFE && ControllerByteArray[4] == 0x3E
 uint8_t ControllerByteArray[5] = { 0x00 };
-uint8_t DeviceNibble = 0x00;
 bool controllerconnected;
 
 
