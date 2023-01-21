@@ -81,7 +81,7 @@ void checkdevicemodenibble(){
                     else bitWrite(NibbleStorage, nibblecheck-4, 0);
                    
 }                     
- if (ControllerModes && ControllerByteArray[2] == 0x5A) controllerconnected = true;
+ if (ControllerModes && ControllerByteArray[0] == 0xFF && ControllerByteArray[2] == 0x5A) controllerconnected = true;
  
 //Serial.println (NibbleStorage, HEX);
 }
