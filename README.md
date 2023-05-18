@@ -55,8 +55,4 @@ The NTSC and PAL functions differ slightly from the original V1.00. Rather than 
 
 Other versions are WIP. Don't use them.
 
-
-To Do:
-
-A stand-alone PCB (modboard) using SI5351 IC with minimal external components + Atmega 168P or 328P MCU with minimal external components - should get away with 
-just bypass caps for both + what ever else is required.
+The project was split into a separate [IGR](https://github.com/L10N37/PS1-IGR-in-game-reset-PlayStation-Sony-psone) board and [DFO](https://github.com/L10N37/DFO-PS1-PSXTAL) board
