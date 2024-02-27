@@ -1,6 +1,5 @@
 #include <Wire.h>
 #include <Adafruit_SI5351.h>
-#define sensepin 2
 #define senseHigh bitRead(PIND, 2) == HIGH
 Adafruit_SI5351 clockgen = Adafruit_SI5351();
 bool NTSC = false;
