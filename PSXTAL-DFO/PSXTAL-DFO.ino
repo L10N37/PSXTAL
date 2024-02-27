@@ -15,14 +15,14 @@ bitClear (DDRD, 2);
 
 void loop(){
 
-if (senseHigh && NTSC == false) {
+if (senseHigh && !NTSC) {
 //NTSC
   clockgen.setupPLL(SI5351_PLL_A, 30, 30, 450);
   clockgen.setupMultisynth(0, SI5351_PLL_A, 13, 5, 5);
   NTSC = true;
     }
 
-if (!senseHigh && NTSC == true) {
+if (!senseHigh && NTSC) {
 //PAL
   clockgen.setupPLLInt(SI5351_PLL_A, 16);
   clockgen.setupMultisynth(0, SI5351_PLL_A, 7, 14, 27);
