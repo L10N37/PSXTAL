@@ -22,7 +22,7 @@ if (senseHigh && !NTSC) {
   clockgen.setupPLL(SI5351_PLL_A, 30, 30, 450);
   clockgen.setupMultisynth(0, SI5351_PLL_A, 13, 5, 5);
 	/*SubC*/
-  clockgen.setupPLLInt(SI5351_PLL_B, 25);  	// 25 * 25 = 625
+  clockgen.setupPLLInt(SI5351_PLL_B, 25);
   clockgen.setupMultisynth(1, SI5351_PLL_B, 174,200, 331);
   NTSC = true;
     }
